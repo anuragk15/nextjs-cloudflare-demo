@@ -23,6 +23,12 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
+## Cloudflare Pages Setup
+
+Make sure to add Environment variable "NODE_VERSION" as 17 and follow the recommended build command & output suggested by CF.
+
+Do not set the NODE_VERSION to 18 or anything below 14. This is will throw an error.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
