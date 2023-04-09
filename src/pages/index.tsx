@@ -5,7 +5,7 @@ import styles from '@/styles/Home.module.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function Home(props: any) {
   return (
     <>
       <Head>
@@ -38,8 +38,9 @@ export default function Home() {
             </a>
           </div>
         </div>
-
+        {props.foo}
         <div className={styles.center}>
+
           <Image
             className={styles.logo}
             src="/next.svg"
@@ -120,4 +121,17 @@ export default function Home() {
       </main>
     </>
   )
+}
+
+export async function getServerSideProps() {
+  console.log('hello there my friends')
+  return {
+    props: {
+      foo: 'Bar'
+    }
+  }
+}
+
+export const config = {
+  runtime: 'experimental-edge'
 }
